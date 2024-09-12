@@ -3,7 +3,7 @@ const products = [
         id: 1,
         name: "Смартфон",
         price: 15000,
-        photo: "smartphone.jpg"
+        photo: "phone.jpg"
     },
     {
         id: 2,
