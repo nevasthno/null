@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товар</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="product-title">Товар</h1>
+    </header>
+
+    <main>
+        <div id="product-details" class="product-details"></div>
+        <button id="buy-button">Купити</button>
+    </main>
+
+    <script src="serv.js"></script>
+    <script>
+        // Отримуємо параметри з URL (id товару)
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        // Знаходимо відповідний товар з файлу serv.js
+        const product = products.find(p => p.id == productId);
+
+        if (product) {
+            document.getElementById('product-title').textContent = product.name;
+
+            const productDetails = document.getElementById('product-details');
+            productDetails.innerHTML = `
+                <img src="photos/${product.photo}" alt="${product.name}">
+                <h2>${product.name}</h2>
+                <p class="price">${product.price} грн</p>
+            `;
+
+            const buyButton = document.getElementById('buy-button');
+            buyButton.addEventListener('click', () => {
+                alert("Помилка: Покупка недоступна!");
+                window.history.back(); // Повернення на попередню сторінку
+            });
+        } else {
+            document.getElementById('product-title').textContent = "Товар не знайдено";
+        }
+    </script>
+</body>
+</html>
