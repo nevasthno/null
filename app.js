@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         img.alt = product.name;
 
         // Назва товару
-        const title = docurment.createElement("h2");
+        const title = document.createElement("h2");
         title.textContent = product.name;
 
         // Ціна товару 
