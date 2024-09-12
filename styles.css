@@ -22,3 +22,36 @@ h1 {
     justify-content: center;
     margin: 20px;
 }
+
+.product {
+    background-color: white;
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.product h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.product p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.product .price {
+    font-weight: bold;
+    color: #e67e22;
+}
