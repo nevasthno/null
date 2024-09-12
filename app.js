@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const title = document.createElement("h2");
         title.textContent = product.name;
 
-        // Ціна товару 
+        // Ціна товару
         const price = document.createElement("p");
         price.classList.add("price");
         price.textContent = `${product.price} грн`;
@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
         productElement.appendChild(img);
         productElement.appendChild(title);
         productElement.appendChild(price);
+
+        // Додаємо клік подію для переходу на сторінку товару
+        productElement.addEventListener('click', () => {
+            window.location.href = `product.html?id=${product.id}`;
+        });
 
         // Додаємо товар у контейнер сторінки
         container.appendChild(productElement);
